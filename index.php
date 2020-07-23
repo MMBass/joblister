@@ -3,22 +3,22 @@
 <?php 
 echo 'test';
 
-// $job = new Job;
+$job = new Job;
 
-// $template = new Template("templates/frontpage.php");
+$template = new Template("templates/frontpage.php");
 
-// $category = isset($_GET['category']) ? $_GET['category'] : null;
+$category = isset($_GET['category']) ? $_GET['category'] : null;
 
-// if($category){
-//   $template->jobs = $job->getByCategory($category);
+if($category){
+  $template->jobs = $job->getByCategory($category);
 
-//   $template->title ='Jobs In '.$job->getCategory($category)->name;
-// }else{
-//     $template->title ='Latest Jobs';
-//     $template->jobs = $job->getAllJobs();
-// }
+  $template->title ='Jobs In '.$job->getCategory($category)->name;
+}else{
+    $template->title ='Latest Jobs';
+    $template->jobs = $job->getAllJobs();
+}
 
-// $template->categories = $job->getCategories();
+$template->categories = $job->getCategories();
 
-// echo $template;
+echo $template;
 ?>
