@@ -1,7 +1,6 @@
 <?php include_once 'config/init.php'; ?>
 
 <?php 
-echo 'test';
 
 $job = new Job;
 
