@@ -1,12 +1,5 @@
 <?php
 
- //todo delete after
- function console_log( $data ){
-  echo '<script>';
-  echo 'console.log(JSON.stringify('. json_encode( $data ) .'))';
-  echo '</script>';
-}
-
 class Job{
     private $db;
 
@@ -23,8 +16,6 @@ class Job{
 
         //Assign Result Set
         $result = $this->db->resultSet();
-
-        console_log($result);
 
         return $result;
     }

@@ -11,9 +11,9 @@ $category = isset($_GET['category']) ? $_GET['category'] : null;
 if($category){
   $template->jobs = $job->getByCategory($category);
 
-  $template->title ='Jobs In '.$job->getCategory($category)->name;
+  $template->title ='Jobs In '.$job->getCategory($category)->name.':';
 }else{
-    $template->title ='Latest Jobs';
+    $template->title ='Latest Jobs:';
     $template->jobs = $job->getAllJobs();
 }
 

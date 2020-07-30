@@ -35,6 +35,7 @@ $template->categories = $job->getCategories();
 
 echo $template;
 
+//todo delete after
     function console_log( $data ){
         echo '<script>';
         echo 'console.log('. json_encode( $data ) .')';

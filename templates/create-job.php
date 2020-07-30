@@ -43,7 +43,7 @@
         <label for="">Contact Email</label>
         <input type="text" class="form-control" name="contact_email">
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+      <input type="submit" class="btn btn-primary mb-3" value="Submit" name="submit">
    </form>
  </div>
 <?php include 'inc/footer.php' ?>

@@ -21,7 +21,7 @@
     </div>
 
     <div class="container">
-      <h2><?php echo $title;?></h2>
+      <h2 style="text-decoration:underline;"><?php echo $title;?></h2>
       <?php  foreach($jobs as $job):  ?>
           <div class="row mt-3">
             <div class="col-md-4">
