@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-<footer class="container">
-      <p>© Company 2020</p>
+    <footer class="container">
+        <p>© Company 2020</p>
     </footer>
 </body>
 </html>

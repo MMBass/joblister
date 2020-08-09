@@ -1,11 +1,14 @@
 <?php 
 
-
-class Database{
-    private $host = DB_HOST;
-    private $user = DB_USER;
-    private $pass = DB_PASS;
-    private $dbname = DB_NAME;
+//todo command for DB filed, keep site alive
+// if(!$conn){
+//     die("connection faild: ".mysql_connetion_error());
+//   }
+class usersDatabase{
+    private $host = USERS_DB_HOST;
+    private $user = USERS_DB_USER;
+    private $pass = USERS_DB_PASS;
+    private $dbname = USERS_DB_NAME;
 
     private $dbh;
     private $error;

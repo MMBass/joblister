@@ -1,5 +1,10 @@
 <?php include 'inc/header.php' ?>
- <div class="container mt-5 card">
+
+<?php
+  if(isset($_SESSION['id'])){
+    if($_SESSION['id'] != 'guest'){
+
+      echo ' <div class="container mt-5 card">
    <h2 class="page-header">Create Job Listing</h2>
    <form method="POST" action="create.php">
       <div class="form-group">
@@ -45,5 +50,13 @@
       </div>
       <input type="submit" class="btn btn-primary mb-3" value="Submit" name="submit">
    </form>
- </div>
+ </div>';
+  }else{
+    redirect('index.php');
+  }
+}else{
+    redirect('index.php');
+  }
+?>
+
 <?php include 'inc/footer.php' ?>

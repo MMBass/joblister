@@ -1,5 +1,5 @@
 <?php include 'inc/header.php' ?>
-    <!-- todo design -->
+
    <div class="card border-dark p-4">
     <div class="card-body">
     <h2 class="page-header"><?php echo $job->job_title;?> (<?php echo $job->location;?>)</h2>
@@ -16,15 +16,20 @@
     <a href="index.php">Go Back »</a>
     <br><br>
     </div>
-
-      <div class="well">
-          <a class="btn btn-light" href="edit.php?id=<?php echo $job->id;?>">Edit</a>
-    
-          <form action="job.php" method="POST" style="display:inline">
-          <input type="hidden" name="del_id" value="<?php echo $job->id; ?>">
-          <input type="submit" class="btn btn-danger" value="Delete">  
-          </form>
-      </div>
+      <?php
+            if(isset($_SESSION['id'])){
+              if($_SESSION['id'] != 'guest'){
+                 echo '<div class="well">
+                 <a class="btn btn-light" href="edit.php?id=<?php echo $job->id;?>">Edit</a>
+           
+                 <form action="job.php" method="POST" style="display:inline">
+                 <input type="hidden" name="del_id" value="<?php echo $job->id; ?>">
+                 <input type="submit" class="btn btn-danger" value="Delete">  
+                 </form>
+             </div>';
+              }
+            }
+        ?>    
       
    </div>
   </div>
