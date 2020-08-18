@@ -1,23 +1,28 @@
 <?php
 
-class Job{
+class User{
     private $db;
 
-   //todo change from jobs to users;
-   
+    public function __construct(){
+      $this->db = new usersDatabase;
+    }
+      
     //Check user exist
-    public function checkUser(){
-        $this->db->query("SELECT jobs.*, categories.name AS cname FROM jobs 
-        INNER JOIN categories
-        ON jobs.category_id = categories.id
-        ORDER BY post_date DESC");
+    public function getUser($data){
+        echo $data['mailuid'];
+  
+        $this->db->query("SELECT * FROM users WHERE userName =:name OR email=:email");
+        
+        $this->db->bind(':email',$data['mailuid']);
+        $this->db->bind(':userName',$data['mailuid']);
 
-        //Assign Result Set
-        $result = $this->db->resultSet();
+         //Assign Result Set
+         $result = $this->db->resultSet();
 
-        return $result;
+         return $result;
     }
 
+      //todo change from jobs to users;
     public function createUser($data){
 
         $this->db->query("INSERT INTO `users`(`category_id`, `company`, `job_title`, `description`, `salary`, `location`, `contact_user`, `contact_email`) VALUES (:category_id,:company,:job_title,:description,:salary,:location,:contact_user,:contact_email)");

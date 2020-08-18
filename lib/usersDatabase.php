@@ -51,14 +51,21 @@ class usersDatabase{
                break;
                default:
                   $type = PDO::PARAM_STR;
+               
            }
         }
         $this->stmt->bindValue($param,$value,$type);
-
     }
 
     public function execute(){
         return $this->stmt->execute(); 
+    }
+
+    //todo delete after
+    public function console_log( $data ){
+        echo '<script>';
+        echo 'console.log('. json_encode( $data ) .')';
+        echo '</script>';
     }
 
     public function resultSet(){

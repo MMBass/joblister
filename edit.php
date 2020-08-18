@@ -17,7 +17,6 @@ if(isset($_POST['submit'])){
    $data['salary'] = $_POST["salary"];
    $data['contact_email'] = $_POST["contact_email"];
    $data['contact_user'] = $_POST["contact_user"];
-   console_log($data);
 
    if($job->update($job_id, $data)){
      redirect('index.php','Your Job has been updated','success');
@@ -34,11 +33,4 @@ $template->job = $job->getJob($job_id);
 $template->categories = $job->getCategories();
 
 echo $template;
-
-//todo delete after
-    function console_log( $data ){
-        echo '<script>';
-        echo 'console.log('. json_encode( $data ) .')';
-        echo '</script>';
-    }
 ?>

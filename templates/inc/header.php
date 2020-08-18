@@ -34,12 +34,11 @@
                   if(isset($_SESSION['id'])){
                     if($_SESSION['id'] != 'guest'){
                       echo 'User: '.$_SESSION['id'];
-                   }
+                    }
                      echo '<form class="form-inline" action="logout.php">
                       <button type="submit" name="logout-submit" class="btn btn-outline-danger">Logout</button>
                       </form>';
                   }else{
-                    // todo fix action
                       echo '<form class="form-inline d-inline" action="login.php" method="POST">
                       <input type="text" name="mailuid" class="form-control" placeholder="Username/Email...">
                       <input type="password" name="pass" class="form-control" placeholder="Password...">
